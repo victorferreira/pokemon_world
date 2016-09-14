@@ -65,6 +65,7 @@ int test_insert_two_pokemons() {
     printf("test_insert_two_pokemon   passes\n");
     // printPokemon(Px.pokemon[Pk.number]);
     // printPokemon(Px.pokemon[Pk2.number]);
+    printPokedex(Px);
     return 0;
   } else {
     printf("test_insert_two_pokemon   fails\n");
