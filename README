@@ -1,0 +1,9 @@
+# Pokemon World
+
+# Test
+```make test_pokemon```
+```make test_pokemon```
+
+##
+
+FIX: pokedex doesn't print more than 142 items of the pokedex
