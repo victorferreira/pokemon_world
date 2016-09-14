@@ -26,13 +26,14 @@ typedef struct {
   int number;
   char* name;
   double size;
+  double weight;
   pokemon_type pType; // TODO: implement dual type pokemon
 } tPokemon;
 
-
-int printPokemon(tPokemon* p) {
+void printPokemon(tPokemon* p) {
   printf("Number: %d\n", p->number);
   printf("Name: %s\n", p->name);
   printf("Size: %.2fm\n", p->size);
-  printf("Type: %d\n", p->pType); // TODO: print the acttual type of the pkemon instead of a number
+  printf("Weigth: %.2fkg\n", p->weight);
+  printf("Type: %d\n", p->pType); // TODO: print the actual type of the pkemon instead of a number
 }

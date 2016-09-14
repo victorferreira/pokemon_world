@@ -1,9 +1,11 @@
 #include "../lib/pokemon.h"
+// #include <conio.h>
 
 int test_create_pokemon() {
-  char* name = "pikachu";
+  char* name = "Pikachu";
   int number = 25;
   double size = 0.4;
+  double weight = 6.0;
   int type = PSYCHIC;
 
   tPokemon Pk;
@@ -11,13 +13,15 @@ int test_create_pokemon() {
   Pk.number = number;
   Pk.pType = type;
   Pk.size = size;
+  Pk.weight = weight;
 
   if (Pk.name == name
     && Pk.number == number
     && Pk.pType == type
-    && Pk.size == size) {
+    && Pk.size == size
+    && Pk.weight == weight) {
     printf("test_create_pokemon   passes\n");
-    printPokemon(&Pk);
+    // printPokemon(&Pk);
     return 0;
   } else {
     printf("test_create_pokemon   fails\n");
@@ -26,5 +30,6 @@ int test_create_pokemon() {
 }
 
 int main() {
+  // system("clear");
   test_create_pokemon();
 }
