@@ -33,7 +33,6 @@ int test_insert_one_pokemon() {
 }
 
 int test_insert_two_pokemons() {
-
   tPokemon Pk;
   Pk.name = "Pikachu";
   Pk.number = 25;
@@ -62,13 +61,11 @@ int test_insert_two_pokemons() {
     && Px.pokemon[Pk2.number]->pType == Pk2.pType
     && Px.pokemon[Pk2.number]->size == Pk2.size
     && Px.pokemon[Pk2.number]->weight == Pk2.weight) {
-    printf("test_insert_two_pokemon   passes\n");
-    // printPokemon(Px.pokemon[Pk.number]);
-    // printPokemon(Px.pokemon[Pk2.number]);
+    printf("test_insert_two_pokemons   passes\n");
     printPokedex(Px);
     return 0;
   } else {
-    printf("test_insert_two_pokemon   fails\n");
+    printf("test_insert_two_pokemons   fails\n");
     return 1;
   }
 }
