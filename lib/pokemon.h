@@ -34,5 +34,5 @@ int printPokemon(tPokemon* p) {
   printf("Number: %d\n", p->number);
   printf("Name: %s\n", p->name);
   printf("Size: %.2fm\n", p->size);
-  printf("Type: %d\n", p->pType);
+  printf("Type: %d\n", p->pType); // TODO: print the acttual type of the pkemon instead of a number
 }
