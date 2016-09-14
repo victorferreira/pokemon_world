@@ -11,11 +11,11 @@ typedef struct {
 
 // FIX: pokedex should start at one instead of zero
 void printPokedex(tPokedex pokedex) {
-  for (int i = 0; i < 151; i++) {
+  for (int i = 1; i < 151; i++) {
     if (pokedex.pokemon[i] != 0) {
-      printf("%d: %s\n", i, pokedex.pokemon[i]->name);;
+      printf("%3.d: %s\n", i, pokedex.pokemon[i]->name);;
     } else {
-      printf("%d: Empty\n", i);
+      printf("%3.d: Empty\n", i);
     }
   }
 }
