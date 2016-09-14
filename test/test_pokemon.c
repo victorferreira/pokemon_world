@@ -1,5 +1,4 @@
 #include "../lib/pokemon.h"
-// #include <conio.h>
 
 int test_create_pokemon() {
   char* name = "Pikachu";
@@ -30,6 +29,5 @@ int test_create_pokemon() {
 }
 
 int main() {
-  // system("clear");
   test_create_pokemon();
 }
