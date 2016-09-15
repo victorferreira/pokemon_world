@@ -16,7 +16,7 @@ int test_insert_one_pokemon() {
   Pk.weight = weight;
 
   tPokedex Px;
-  Px.pokemon[number] = &Pk;
+  insertPokemon(&Px, &Pk);
 
   if (Px.pokemon[number]->name == name
     && Px.pokemon[number]->number == number
@@ -48,8 +48,8 @@ int test_insert_two_pokemons() {
   Pk2.weight = GRASS;
 
   tPokedex Px;
-  Px.pokemon[Pk.number] = &Pk;
-  Px.pokemon[Pk2.number] = &Pk2;
+  insertPokemon(&Px, &Pk);
+  insertPokemon(&Px, &Pk2);
 
   if (Px.pokemon[Pk.number]->name == Pk.name
     && Px.pokemon[Pk.number]->number == Pk.number

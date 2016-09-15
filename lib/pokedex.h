@@ -2,12 +2,12 @@
 #include "../lib/pokemon.h"
 
 typedef struct {
-  tPokemon* pokemon[150]; // TODO: implement an array of pokemons
+  tPokemon* pokemon[150];
 } tPokedex;
 
-// TODO: insert pokemon
-// void insertPokemon(tPokedex* pokedex, tPokemon* pokemon) {
-// }
+void insertPokemon(tPokedex* pokedex, tPokemon* pokemon) {
+  pokedex->pokemon[pokemon->number] = pokemon;
+}
 
 // FIX: pokedex should start at one instead of zero
 void printPokedex(tPokedex pokedex) {
