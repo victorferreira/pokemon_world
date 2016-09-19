@@ -6,23 +6,18 @@ int test_insert_one_pokemon() {
   int number = 25;
   double size = 0.4;
   double weight = 6.0;
-  int type = PSYCHIC;
+  char* type = "PSYCHIC";
 
   tPokemon Pk;
-  Pk.name = name;
-  Pk.number = number;
-  Pk.pType = type;
-  Pk.size = size;
-  Pk.weight = weight;
+  Pk = cretatePokemon(number, name, size, weight, type);
 
-  tPokedex Px;
-  insertPokemon(&Px, &Pk);
+  addPokemonToPokedex(Pk.number, Pk.name, Pk.size, Pk.weight, Pk.pType);
 
-  if (Px.pokemon[number]->name == name
-    && Px.pokemon[number]->number == number
-    && Px.pokemon[number]->pType == type
-    && Px.pokemon[number]->size == size
-    && Px.pokemon[number]->weight == weight) {
+  if (Px.items[number].number == number
+    // && Px.items[number].name == name
+    && Px.items[number].size == size
+    && Px.items[number].weight == weight
+    && Px.items[number].pType == type) {
     printf("test_insert_one_pokemon   passes\n");
     // printPokemon(Px.pokemon[number]);
     return 0;
@@ -34,41 +29,33 @@ int test_insert_one_pokemon() {
 
 int test_insert_two_pokemons() {
   tPokemon Pk;
-  Pk.name = "Pikachu";
-  Pk.number = 25;
-  Pk.pType = 0.4;
-  Pk.size = 6.0;
-  Pk.weight = PSYCHIC;
+  Pk = cretatePokemon(25, "Pikachu", 0.4, 6.0, "PSYCHIC");
 
   tPokemon Pk2;
-  Pk2.name = "Bulbasaur";
-  Pk2.number = 1;
-  Pk2.pType = 0.6;
-  Pk2.size = 6.9;
-  Pk2.weight = GRASS;
+  Pk2 = cretatePokemon(1, "Bulbasaur", 0.6, 6.9, "GRASS");
 
-  tPokedex Px;
-  insertPokemon(&Px, &Pk);
-  insertPokemon(&Px, &Pk2);
+  addPokemonToPokedex(Pk.number, Pk.name, Pk.size, Pk.weight, Pk.pType);
+  addPokemonToPokedex(Pk2.number, Pk2.name, Pk2.size, Pk2.weight, Pk2.pType);
 
-  if (Px.pokemon[Pk.number]->name == Pk.name
-    && Px.pokemon[Pk.number]->number == Pk.number
-    && Px.pokemon[Pk.number]->pType == Pk.pType
-    && Px.pokemon[Pk.number]->size == Pk.size
-    && Px.pokemon[Pk.number]->weight == Pk.weight
-    && Px.pokemon[Pk2.number]->name == Pk2.name
-    && Px.pokemon[Pk2.number]->number == Pk2.number
-    && Px.pokemon[Pk2.number]->pType == Pk2.pType
-    && Px.pokemon[Pk2.number]->size == Pk2.size
-    && Px.pokemon[Pk2.number]->weight == Pk2.weight) {
+  if (Px.items[Pk.number].number == Pk.number
+    // && Px.items[Pk.number].name == Pk.name
+    && Px.items[Pk.number].size == Pk.size
+    && Px.items[Pk.number].weight == Pk.weight
+    && Px.items[Pk.number].pType == Pk.pType
+    && Px.items[Pk2.number].number == Pk2.number
+    // && Px.items[Pk2.number].name == Pk2.name
+    && Px.items[Pk2.number].size == Pk2.size
+    && Px.items[Pk2.number].weight == Pk2.weight
+    && Px.items[Pk2.number].pType == Pk2.pType) {
     printf("test_insert_two_pokemons   passes\n");
-    printPokedex(Px);
+    // printPokedex();
     return 0;
   } else {
     printf("test_insert_two_pokemons   fails\n");
     return 1;
   }
 }
+
 
 int main() {
   test_insert_one_pokemon();

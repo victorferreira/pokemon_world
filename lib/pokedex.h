@@ -2,20 +2,25 @@
 #include "../lib/pokemon.h"
 
 typedef struct {
-  tPokemon* pokemon[150];
+  tPokemon items[150];
 } tPokedex;
 
-void insertPokemon(tPokedex* pokedex, tPokemon* pokemon) {
-  pokedex->pokemon[pokemon->number] = pokemon;
+tPokedex Px;
+
+void addPokemonToPokedex(int number, char* name, double size, double weight, char* pType) {
+  Px.items[number].number = number;
+  strcpy(Px.items[number].name, name);
+  Px.items[number].size = size;
+  Px.items[number].weight = weight;
+  Px.items[number].pType = pType;
 }
 
-// FIX: pokedex should start at one instead of zero
-void printPokedex(tPokedex pokedex) {
+void printPokedex() {
   for (int i = 1; i < 151; i++) {
-    if (pokedex.pokemon[i] != 0) {
-      printf("%3.d: %s\n", i, pokedex.pokemon[i]->name);;
+    if (Px.items[i].number != 0) {
+      printf("%3.d: %s\n", i, Px.items[i].name);;
     } else {
-      printf("%3.d: Empty\n", i);
+      printf("%3.d: Empty [%d]\n", i, Px.items[i].number);
     }
   }
 }
