@@ -21,7 +21,6 @@ int main() {
   while((line=fgets(buffer,sizeof(buffer),fstream))!=NULL) {
     record = strtok(line,";");
     while(record != NULL) {
-      // printf("record %d: %s\n", j, record);
 
       if (j == 1) {
         number = atoi(record);
@@ -34,7 +33,6 @@ int main() {
       } else if (j == 5) {
         pType = record;
       }
-      // printPokemon(pokemon);
       record = strtok(NULL,";");
       j++;
     }
