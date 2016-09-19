@@ -10,9 +10,9 @@ int test_create_pokemon() {
   tPokemon Pk;
   Pk = cretatePokemon(number, name, size, weight, type);
 
-// FIX: name comparasion 
+// FIX: name comparasion
   if (Pk.number == number
-    // && Pk.name == name
+    && Pk.name == name
     && Pk.size == size
     && Pk.weight == weight
     && Pk.pType == type) {
