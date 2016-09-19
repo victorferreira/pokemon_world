@@ -1,6 +1,7 @@
 // TODO: Implement #ifdef
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 typedef enum {NORMAL,
               FIRE,
@@ -24,7 +25,7 @@ typedef enum {NORMAL,
 
 typedef struct {
   int number;
-  char name[20];
+  char* name;
   double size;
   double weight;
   char* pType; // TODO: implement dual type pokemon
@@ -41,7 +42,7 @@ void printPokemon(tPokemon p) {
 tPokemon cretatePokemon(int number, char* name, double size, double weight, char* pType) {
   tPokemon pokemon;
   pokemon.number = number;
-  strcpy(pokemon.name, name);
+  pokemon.name   = name;
   pokemon.size   = size;
   pokemon.weight = weight;
   pokemon.pType  = pType;
