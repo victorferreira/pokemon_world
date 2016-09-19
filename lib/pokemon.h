@@ -24,16 +24,27 @@ typedef enum {NORMAL,
 
 typedef struct {
   int number;
-  char* name;
+  char name[20];
   double size;
   double weight;
-  pokemon_type pType; // TODO: implement dual type pokemon
+  char* pType; // TODO: implement dual type pokemon
 } tPokemon;
 
-void printPokemon(tPokemon* p) {
-  printf("Number: %d\n", p->number);
-  printf("Name: %s\n", p->name);
-  printf("Size: %.2fm\n", p->size);
-  printf("Weigth: %.2fkg\n", p->weight);
-  printf("Type: %d\n", p->pType); // TODO: print the actual type of the pkemon instead of a number
+void printPokemon(tPokemon p) {
+  printf("Number: %d\n", p.number);
+  printf("Name: %s\n", p.name);
+  printf("Size: %.2fm\n", p.size);
+  printf("Weigth: %.2fkg\n", p.weight);
+  printf("Type: %s\n", p.pType); // TODO: print the actual type of the pkemon instead of a number
+}
+
+tPokemon cretatePokemon(int number, char* name, double size, double weight, char* pType) {
+  tPokemon pokemon;
+  pokemon.number = number;
+  strcpy(pokemon.name, name);
+  pokemon.size   = size;
+  pokemon.weight = weight;
+  pokemon.pType  = pType;
+
+  return pokemon;
 }
