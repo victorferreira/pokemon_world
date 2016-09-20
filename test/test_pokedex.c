@@ -2,16 +2,16 @@
 #include "../lib/pokedex.h"
 
 int test_insert_one_pokemon() {
-  char* name = "Pikachu";
   int number = 25;
+  char* name = "Pikachu";
   double size = 0.4;
   double weight = 6.0;
   char* type = "PSYCHIC";
 
-  tPokemon Pk;
-  Pk = cretatePokemon(number, name, size, weight, type);
+  struct tPokemon Pk;
+  Pk = createPokemon(number, name, size, weight, type);
 
-  addPokemonToPokedex(Pk.number, Pk.name, Pk.size, Pk.weight, Pk.pType);
+  addPokemonToPokedex(&Pk);
 
   if (Px.items[number].number == number
     // && Px.items[number].name == name
@@ -28,14 +28,14 @@ int test_insert_one_pokemon() {
 }
 
 int test_insert_two_pokemons() {
-  tPokemon Pk;
-  Pk = cretatePokemon(25, "Pikachu", 0.4, 6.0, "PSYCHIC");
+  struct tPokemon Pk;
+  Pk = createPokemon(25, "Pikachu", 0.4, 6.0, "PSYCHIC");
 
-  tPokemon Pk2;
-  Pk2 = cretatePokemon(1, "Bulbasaur", 0.6, 6.9, "GRASS");
+  struct tPokemon Pk2;
+  Pk2 = createPokemon(1, "Bulbasaur", 0.6, 6.9, "GRASS");
 
-  addPokemonToPokedex(Pk.number, Pk.name, Pk.size, Pk.weight, Pk.pType);
-  addPokemonToPokedex(Pk2.number, Pk2.name, Pk2.size, Pk2.weight, Pk2.pType);
+  addPokemonToPokedex(&Pk);
+  addPokemonToPokedex(&Pk2);
 
   if (Px.items[Pk.number].number == Pk.number
     // && Px.items[Pk.number].name == Pk.name

@@ -29,6 +29,7 @@ struct tPokemon {
   double size;
   double weight;
   char* pType; // TODO: implement dual type pokemon
+  int image;
 };
 
 void printPokemon(struct tPokemon *pokemon) {
