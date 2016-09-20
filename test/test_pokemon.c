@@ -7,8 +7,8 @@ int test_create_pokemon() {
   double weight = 6.0;
   char* type = "PSYCHIC";
 
-  tPokemon Pk;
-  Pk = cretatePokemon(number, name, size, weight, type);
+  struct tPokemon Pk;
+  Pk = createPokemon(number, name, size, weight, type);
 
 // FIX: name comparasion
   if (Pk.number == number
