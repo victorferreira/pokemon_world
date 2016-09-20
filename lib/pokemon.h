@@ -32,11 +32,7 @@ struct tPokemon {
 };
 
 void printPokemon(struct tPokemon *pokemon) {
-  printf("Number: %d\n", pokemon->number);
-  printf("Name: %s\n", pokemon->name);
-  printf("Size: %.2fm\n", pokemon->size);
-  printf("Weigth: %.2fkg\n", pokemon->weight);
-  printf("Type: %s\n", pokemon->pType);
+  printf("|%d\t| %s\t| %.2fm\t| %.2fkg | %s\t|", pokemon->number, pokemon->name, pokemon->size, pokemon->weight, pokemon->pType);
 }
 
 struct tPokemon createPokemon(int number, char* name, double size, double weight, char* pType) {

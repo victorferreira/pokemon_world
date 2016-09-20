@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
 #include "../lib/pokedex.h"
 int main() {
   char buffer[1024] ;
@@ -36,7 +36,7 @@ int main() {
       record = strtok(NULL,";");
       j++;
     }
-    addPokemonToPokedex(number, name, size, weight, pType);
+    addPokemonToPokedexByValue(number, name, size, weight, pType);
     j = 1;
     ++i ;
   }
